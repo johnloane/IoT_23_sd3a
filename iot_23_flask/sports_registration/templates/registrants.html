@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+    <ul>
+        {% for name, sport in registrants.items() %}
+            <li>{{name}} - {{sport}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
