@@ -1,8 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
     <ul>
-        {% for name, sport in registrants.items() %}
-            <li>{{name}} - {{sport}}</li>
+        {% for registrant in registrants %}
+            <li>{{registrant[1]}} - {{registrant[2]}}</li>
+            <form action="/deregister" method="POST">
+                <input type="hidden" name="id" value="{{registrant[0]}}">
+                <input type="submit" value="Deregister">
+            </form>
         {% endfor %}
     </ul>
 {% endblock %}
